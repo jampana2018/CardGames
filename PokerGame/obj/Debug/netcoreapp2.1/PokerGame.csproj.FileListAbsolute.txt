@@ -1,0 +1,11 @@
+/Users/Kartheek/Projects/CardGames/PokerGame/bin/Debug/netcoreapp2.1/PokerGame.deps.json
+/Users/Kartheek/Projects/CardGames/PokerGame/bin/Debug/netcoreapp2.1/PokerGame.runtimeconfig.json
+/Users/Kartheek/Projects/CardGames/PokerGame/bin/Debug/netcoreapp2.1/PokerGame.runtimeconfig.dev.json
+/Users/Kartheek/Projects/CardGames/PokerGame/bin/Debug/netcoreapp2.1/PokerGame.dll
+/Users/Kartheek/Projects/CardGames/PokerGame/bin/Debug/netcoreapp2.1/PokerGame.pdb
+/Users/Kartheek/Projects/CardGames/PokerGame/obj/Debug/netcoreapp2.1/PokerGame.csprojAssemblyReference.cache
+/Users/Kartheek/Projects/CardGames/PokerGame/obj/Debug/netcoreapp2.1/PokerGame.csproj.CoreCompileInputs.cache
+/Users/Kartheek/Projects/CardGames/PokerGame/obj/Debug/netcoreapp2.1/PokerGame.AssemblyInfoInputs.cache
+/Users/Kartheek/Projects/CardGames/PokerGame/obj/Debug/netcoreapp2.1/PokerGame.AssemblyInfo.cs
+/Users/Kartheek/Projects/CardGames/PokerGame/obj/Debug/netcoreapp2.1/PokerGame.dll
+/Users/Kartheek/Projects/CardGames/PokerGame/obj/Debug/netcoreapp2.1/PokerGame.pdb
