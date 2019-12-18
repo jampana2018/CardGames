@@ -5,11 +5,13 @@ using System.Linq;
 namespace CardGames
 {
     class Program
-    {
+	{
         static void Main(string[] args)
         {
 
             Console.WriteLine("Welcome to Poker Game");
+
+			//Open Game
             GameFactory factory = new GameFactory();
             IGame myGame = factory.StartGame("Poker");
 
@@ -22,18 +24,20 @@ namespace CardGames
                 if (string.IsNullOrEmpty(inputCards))
                     throw new Exception("Not valid input");
 
+				//Accept Cards
                 IEnumerable<Card> cards = inputCards.Split(" ", StringSplitOptions.RemoveEmptyEntries).Select((x) => new Card(x));
 
+				//Shuffle Cards to players
                 myGame.Shuffle(cards);
 
-                Console.WriteLine();
 				Console.WriteLine();
 
-                Console.WriteLine($"Winner for {myGame.Name} ! " + myGame.ShowWinner());
+				//Show Winner
+                Console.WriteLine($"Winner(s) for {myGame.Name} ! " + myGame.ShowWinner());
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Interruption in the Game due to:  {ex.Message}");
+                Console.WriteLine($"Interruption in the Game due to:  {ex.Message} {ex.StackTrace}");
             }
 
             Console.WriteLine();
@@ -41,5 +45,4 @@ namespace CardGames
             Console.ReadLine();
         }
     }
-
 }

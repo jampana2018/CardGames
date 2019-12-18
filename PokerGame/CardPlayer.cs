@@ -8,11 +8,20 @@ namespace CardGames
     {
         public List<Card> Cards { get; set; }
 
-        public Stakes stake { get; set; }
-
         public int Rank { get; set; }
 
         public int ID { get; set; }
+
+        public List<int> Kickers { get; set; }
+
+        public Stakes Stake
+        {
+            get
+            {
+                return (Stakes)Enum.Parse(typeof(Stakes), Rank.ToString());
+            }
+        }
+
 
         public int BigCard
         {
@@ -20,7 +29,7 @@ namespace CardGames
             {
                 return Cards.Max(o => (int)Enum.Parse(typeof(CardFace), o.Face));
             }
-        }
+		}
 
         public string Faces
         {
@@ -32,8 +41,10 @@ namespace CardGames
 
         public override string ToString()
         {
-            return $"Player {ID} with '{stake.ToString()}' ( {String.Join(" ", Cards.Select(card => card.Me))} )";
+            return $"{Environment.NewLine} Player {ID} with '{Stake}' ( {String.Join(" ", Cards.Select(card => card.Me))} )";
         }
+
+
         public CardPlayer(int playerIndex, List<Card> cards)
         {
             ID = playerIndex;

@@ -9,10 +9,6 @@ namespace CardGames
             {
                 case "Poker":
                     return new Poker();
-
-                // case "TexasHoldEm":
-                //     return new TexasHoldEm();
-
                 default: return null;
             }
         }

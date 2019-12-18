@@ -8,6 +8,6 @@ namespace CardGames
 
         void Shuffle(IEnumerable<Card> cards);
 
-        string ShowWinner();
+		string ShowWinner();
     }
 }
