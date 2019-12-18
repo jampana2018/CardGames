@@ -29,7 +29,7 @@ namespace CardGames
             {
                 return Cards.Max(o => (int)Enum.Parse(typeof(CardFace), o.Face));
             }
-		}
+        }
 
         public string Faces
         {
@@ -37,6 +37,13 @@ namespace CardGames
             {
                 return String.Join("", Cards.OrderBy(o => (int)Enum.Parse(typeof(CardFace), o.Face)).Select(card => card.Face));
             }
+        }
+
+        public void ShowCards()
+        {
+            Console.WriteLine($"Player {ID} hand having:");
+            foreach (var card in Cards)
+                Console.WriteLine(card);
         }
 
         public override string ToString()

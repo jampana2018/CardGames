@@ -13,12 +13,16 @@ public enum Symbol
     D
 }
 
-enum CardFace
+public enum CardFace
 {
-    A = 14,
-    J = 11,
-    Q = 12,
-    K = 13
+	[Description("Ace")]
+	A = 14,
+	[Description("Jack")]
+	J = 11,
+	[Description("Queen")]
+	Q = 12,
+	[Description("Kind")]
+	K = 13
 }
 
 public enum Stakes

@@ -5,13 +5,13 @@ using System.Linq;
 namespace CardGames
 {
     class Program
-	{
+    {
         static void Main(string[] args)
         {
 
             Console.WriteLine("Welcome to Poker Game");
 
-			//Open Game
+            //Open Game
             GameFactory factory = new GameFactory();
             IGame myGame = factory.StartGame("Poker");
 
@@ -24,20 +24,36 @@ namespace CardGames
                 if (string.IsNullOrEmpty(inputCards))
                     throw new Exception("Not valid input");
 
-				//Accept Cards
-                IEnumerable<Card> cards = inputCards.Split(" ", StringSplitOptions.RemoveEmptyEntries).Select((x) => new Card(x));
+                //Accept Cards
+                IEnumerable<string> inputStrings = inputCards.Split(" ", StringSplitOptions.RemoveEmptyEntries);
 
-				//Shuffle Cards to players
+                IList<Card> cards = new List<Card>();
+
+                foreach (var str in inputStrings)
+                {
+                    bool IsSuccess = Enum.TryParse(str.Substring(str.Length - 1), out Symbol s);
+                    if (IsSuccess)
+                    {
+                        var FaceValue = str.Substring(0, str.Length - 1);
+                        Enum.TryParse(FaceValue, out CardFace face);
+
+                        if ((int)face < 0 || (int)face > 14)
+                            throw new Exception("Invalid Card");
+
+                        cards.Add(new Card(str));
+                    }
+                }
+                //Shuffle Cards to players
                 myGame.Shuffle(cards);
 
-				Console.WriteLine();
+                Console.WriteLine();
 
-				//Show Winner
+                //Show Winner
                 Console.WriteLine($"Winner(s) for {myGame.Name} ! " + myGame.ShowWinner());
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Interruption in the Game due to:  {ex.Message} {ex.StackTrace}");
+                Console.WriteLine($"Game terminated, Reason :  {ex.Message}");
             }
 
             Console.WriteLine();
